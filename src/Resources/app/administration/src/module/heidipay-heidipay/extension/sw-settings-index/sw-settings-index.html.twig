@@ -1,0 +1,11 @@
+{% block sw_settings_content_card_slot_plugins %}
+    {% parent %}
+
+    <sw-settings-item :label="$tc('HeidiPay.mainMenuItemGeneral')"
+                      :to="{ name: ' heidipay.settings.index' }"
+                      :backgroundEnabled="false">
+        <template #icon>
+            <img class="sw-settings-index__heidipay-icon" :src="'heidipay/administration/plugin.png' | asset">
+        </template>
+    </sw-settings-item>
+{% endblock %}

@@ -1,0 +1,61 @@
+{
+    "HeidiPay": {
+        "mainMenuItemGeneral": "HeidiPay",
+        "module": {
+            "title": "HeidiPay",
+            "description": "HeidiPay"
+        },
+        "settingsForm": {
+            "title": "HeidiPay",
+            "test": "Test API-Credentials",
+            "save": "Save",
+            "attention": "Important",
+            "attentionText": "For the plugin to work, all *mandatory fields must be filled in and the correct address data must be stored.",
+            "descriptionWebservice": "The Client Secret Key will be assigned and sent to you directly by HeidiPay. If you have not yet requested or received them, you can order them at the following link: ",
+            "fields": {
+                "heidiSecretKey": "Secret API Key",
+                "heidiPromotionPublicApiKey": "Public API Key",
+                "heidiPromotionWidgetFee": "Display price",
+                "heidiPromotionProductMode": "Promotion Product",
+                "heidiPromotionTerms": "Number of Instalments (BNPL)",
+                "heidiPromotionTermsCredit": "Number of Instalments (Credit)"
+            },
+            "messages": {
+                "required": "{field} must not be empty.",
+                "messageNotBlank": "This Field must not be empty.",
+                "titleSuccess": "Success",
+                "titleError": "Error",
+                "titleMissing": "Required Fields",
+                "messageMissing": "Please fill out all required fields",
+                "messageTestSuccess": "The API credentials are correct.",
+                "messageTestError": "The API credentials are wrong.",
+                "messageTestErrorGeneral": "The API-Credentials could not be verified.",
+                "messageTestTitleEmpty": "The API credentials are empty.",
+                "messageTestErrorEmpty": "The API credentials cant be empty. please fill in the Secret Key.",
+                "messageSaveSuccess": "The plugin settings have been saved.",
+                "messageSaveError": "The plugin settings could not be saved."
+            }
+        },
+        "supportModal": {
+            "supportButton": "Support",
+            "title": "How Can We Help You?",
+            "supportDesc": "Contact our support team",
+            "manualButton": "Manual",
+            "manualDesc": "Read our integration manual"
+        },
+        "order": {
+            "detail": {
+                "actions": "Actions",
+                "actions_refund": "Refund",
+                "tab": "Heidipay"
+            },
+            "messages": {
+                "refundSuccessTitle": "Refund successful!",
+                "refundSuccessMessage": "The refund was successfully processed",
+                "refundErrorTitle": "Refund failed!",
+                "refundErrorMessage": "Please try again or contact the Heidipay-Support"
+            }
+        }
+
+    }
+}

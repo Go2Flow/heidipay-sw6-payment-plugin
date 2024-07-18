@@ -1,0 +1,16 @@
+{% block maximizly_shipping_detail %}
+
+<div class="sw-order-detail-heidipay">
+    <sw-card :title="$tc('HeidiPay.order.detail.actions')">
+        <sw-button-process
+            class=""
+            :isLoading="isLoading"
+            :disabled="isLoading || !buttonEnabled"
+            variant="primary"
+            @click.prevent="submitRefund">
+            {{ $tc('HeidiPay.order.detail.actions_refund') }}
+        </sw-button-process>
+    </sw-card>
+</div>
+
+{% endblock %}

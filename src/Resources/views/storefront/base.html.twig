@@ -1,0 +1,33 @@
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+{% block base_body_script %}
+    {{ parent() }}
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            if(document.querySelector('.heidipay-container') || document.querySelector('.heidipay-container-2')){
+                loadHeidiPay();
+            }
+        });
+
+        function loadHeidiPay() {
+            let script = document.createElement('script');
+            {% if config('Go2FlowHeidiPayPayment.settings.heidiMode') == 1 %}
+            script.src = 'https://upstream.heidipay.com/sdk/heidi-upstream-lib.js';
+            {% else %}
+            script.src = 'https://sbx-upstream.heidipay.io/sdk/heidi-upstream-lib.js';
+            {% endif %}
+            document.head.appendChild(script);
+            script.addEventListener('load', () => {
+                // let cusid_ele = document.getElementsByClassName('heidipay-container-2');
+                // for (let i = 0; i < cusid_ele.length; ++i) {
+                //     if (cusid_ele[i] && cusid_ele[i].innerHTML === '') {
+                //         initCoreHeidiCode(jQuery);
+                //     }
+                // }
+                window.HeidiPayLoaded = true;
+            })
+        }
+    </script>
+{% endblock %}
+

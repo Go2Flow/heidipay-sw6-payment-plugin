@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>HeidiPay</title>
+        <title lang="de-DE">HeidiPay</title>
+        <title lang="de-CH">HeidiPay</title>
+        <title lang="it-CH">HeidiPay</title>
+
+        <input-field type="text">
+            <name>heidiSecretKey</name>
+            <label>Sandbox or Live Secret API Key (Merchant Key)</label>
+            <label lang="de-DE">Sandbox oder Live Secret API Key (Händlerschlüssel)</label>
+            <label lang="de-CH">Sandbox oder Live Secret API Key (Händlerschlüssel)</label>
+            <label lang="it-CH">Sandbox o Live Secret API Key (Chiave venditore)</label>
+            <required>true</required>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>heidiMode</name>
+            <label>Mode</label>
+            <label lang="de-DE">Modus</label>
+            <label lang="de-CH">Modus</label>
+            <label lang="it-CH">Modalità</label>
+            <helpText>Tick to enable this plugin in a test environment or untick to go live</helpText>
+            <helpText lang="de-DE">Aktivieren Sie dieses Kästchen, um das Plugin in einer Testumgebung zu aktivieren, oder deaktivieren Sie es, um es live zu schalten</helpText>
+            <helpText lang="de-CH">Aktivieren Sie dieses Kästchen, um das Plugin in einer Testumgebung zu aktivieren, oder deaktivieren Sie es, um es live zu schalten</helpText>
+            <helpText lang="it-CH">Spunta questa casella per abilitare il plugin in un ambiente di test deselezionala per andare in produzione</helpText>
+            <defaultValue>0</defaultValue>
+            <options>
+                <option>
+                    <id>0</id>
+                    <name>Test</name>
+                    <name lang="de-DE">Testumgebung</name>
+                    <name lang="de-CH">Testumgebung</name>
+                    <name lang="it-CH">Ambiente di test</name>
+                </option>
+                <option>
+                    <id>1</id>
+                    <name>Live</name>
+                    <name lang="de-DE">Live</name>
+                    <name lang="de-CH">Live</name>
+                    <name lang="it-CH">Live</name>
+                </option>
+            </options>
+        </input-field>
+
+    </card>
+
+    <card>
+        <title>Promotional Messaging Settings</title>
+        <title lang="de-DE">Einstellungen Preis pro Monat</title>
+        <title lang="de-CH">Einstellungen Preis pro Monat</title>
+        <title lang="it-CH">Impostazioni dei messaggi promozionali</title>
+
+        <input-field type="single-select">
+            <name>heidiPromotionShowOnProduct</name>
+            <label>Show the promotional message on your product page</label>
+            <label lang="de-DE">Zeigen Sie den Preis pro Monat auf Ihrer Produktseite an</label>
+            <label lang="de-CH">Zeigen Sie den Preis pro Monat auf Ihrer Produktseite an</label>
+            <label lang="it-CH">Visualizza il messaggio promozionale sulla pagina del tuo prodotto</label>
+
+            <helpText>Show the customer the pay monthly option on the product page</helpText>
+            <helpText lang="de-DE">Zeigen Sie dem Kunden die monatliche Zahlungsoption auf der Produktseite</helpText>
+            <helpText lang="de-CH">Zeigen Sie dem Kunden die monatliche Zahlungsoption auf der Produktseite</helpText>
+            <helpText lang="it-CH">Mostra al cliente l'opzione di pagamento mensile nella pagina del prodotto</helpText>
+            <required>true</required>
+            <defaultValue>1</defaultValue>
+            <options>
+                <option>
+                    <id>0</id>
+                    <name>No</name>
+                    <name lang="de-DE">Nein</name>
+                    <name lang="de-CH">Nein</name>
+                    <name lang="it-CH">No</name>
+
+                </option>
+                <option>
+                    <id>1</id>
+                    <name>Yes</name>
+                    <name lang="de-DE">Ja</name>
+                    <name lang="de-CH">Ja</name>
+                    <name lang="it-CH">Sì</name>
+
+                </option>
+            </options>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>heidiPromotionShowOnCart</name>
+            <label>Show promotional message on the cart</label>
+            <label lang="de-DE">Preis pro Monat im Warenkorb anzeigen</label>
+            <label lang="de-CH">Preis pro Monat im Warenkorb anzeigen</label>
+            <label lang="it-CH">Mostra il messaggio promozionale nel carrello</label>
+
+            <helpText>Show your customer their payment options whilst they review their cart</helpText>
+            <helpText lang="de-DE">Zeigen Sie Ihren Kunden ihre Zahlungsoptionen, während sie ihren Warenkorb überprüfen</helpText>
+            <helpText lang="de-CH">Zeigen Sie Ihren Kunden ihre Zahlungsoptionen, während sie ihren Warenkorb überprüfen</helpText>
+            <helpText lang="it-CH">Mostra al tuo cliente le sue opzioni di pagamento mentre esamina il suo carrello</helpText>
+
+            <required>true</required>
+            <defaultValue>1</defaultValue>
+            <options>
+                <option>
+                    <id>0</id>
+                    <name>No</name>
+                    <name lang="de-DE">Nein</name>
+                    <name lang="de-CH">Nein</name>
+                    <name lang="it-CH">No</name>
+
+                </option>
+                <option>
+                    <id>1</id>
+                    <name>Yes</name>
+                    <name lang="de-DE">Ja</name>
+                    <name lang="de-CH">Ja</name>
+                    <name lang="it-CH">Sì</name>
+
+                </option>
+            </options>
+        </input-field>
+
+        <input-field type="text">
+            <name>heidiPromotionPublicApiKey</name>
+            <label>Public API Key</label>
+            <label lang="de-DE">Öffentlicher API-Schlüssel</label>
+            <label lang="de-CH">Öffentlicher API-Schlüssel</label>
+            <label lang="it-CH">Chiave API pubblica</label>
+
+        </input-field>
+
+        <input-field type="text">
+            <name>heidiPromotionWidgetFee</name>
+            <label>Display price per month including a fee</label>
+            <label lang="de-DE">Preis pro Monat inklusive einer Gebühr anzeigen</label>
+            <label lang="de-CH">Preis pro Monat inklusive einer Gebühr anzeigen</label>
+            <label lang="it-CH">Visualizza il prezzo al mese aggiungendo una commissione</label>
+
+            <helpText>(%) A number between 0 and 100. Only available for Swiss merchants and payment plans less than 90 days.</helpText>
+            <helpText lang="de-DE">(%) Eine Zahl zwischen 0 und 100. Nur verfügbar für Schweizer Händler und Zahlungspläne unter 90 Tagen.</helpText>
+            <helpText lang="de-CH">(%) Eine Zahl zwischen 0 und 100. Nur verfügbar für Schweizer Händler und Zahlungspläne unter 90 Tagen.</helpText>
+            <helpText lang="it-CH">(%) Un numero compreso tra 0 e 100. Disponibile solo per venditori svizzeri e piani di pagamento inferiori a 90 giorni.</helpText>
+
+            <required>true</required>
+        </input-field>
+
+        <input-field type="multi-select">
+            <name>heidiPromotionTerms</name>
+            <label>Select the number of instalments to offer customers</label>
+            <label lang="de-DE">Wählen Sie die Anzahl der Raten aus, die Sie Ihren Kunden anbieten möchten</label>
+            <label lang="de-CH">Wählen Sie die Anzahl der Raten aus, die Sie Ihren Kunden anbieten möchten</label>
+            <label lang="it-CH">Seleziona il numero di paiements à offrir aux clients</label>
+
+            <required>true</required>
+            <defaultValue>1</defaultValue>
+            <options>
+                <option>
+                    <id>3</id>
+                    <name>3</name>
+                    <name lang="de-DE">3</name>
+                    <name lang="de-CH">3</name>
+                    <name lang="it-CH">3</name>
+                </option>
+                <option>
+                    <id>4</id>
+                    <name>4</name>
+                    <name lang="de-DE">4</name>
+                    <name lang="de-CH">4</name>
+                    <name lang="it-CH">4</name>
+                </option>
+                <option>
+                    <id>5</id>
+                    <name>5</name>
+                    <name lang="de-DE">5</name>
+                    <name lang="de-CH">5</name>
+                    <name lang="it-CH">5</name>
+                </option>
+                <option>
+                    <id>6</id>
+                    <name>6</name>
+                    <name lang="de-DE">6</name>
+                    <name lang="de-CH">6</name>
+                    <name lang="it-CH">6</name>
+                </option>
+                <option>
+                    <id>7</id>
+                    <name>7</name>
+                    <name lang="de-DE">7</name>
+                    <name lang="de-CH">7</name>
+                    <name lang="it-CH">7</name>
+                </option>
+                <option>
+                    <id>8</id>
+                    <name>8</name>
+                    <name lang="de-DE">8</name>
+                    <name lang="de-CH">8</name>
+                    <name lang="it-CH">8</name>
+                </option>
+                <option>
+                    <id>9</id>
+                    <name>9</name>
+                    <name lang="de-DE">9</name>
+                    <name lang="de-CH">9</name>
+                    <name lang="it-CH">9</name>
+                </option>
+                <option>
+                    <id>10</id>
+                    <name>10</name>
+                    <name lang="de-DE">10</name>
+                    <name lang="de-CH">10</name>
+                    <name lang="it-CH">10</name>
+                </option>
+                <option>
+                    <id>11</id>
+                    <name>11</name>
+                    <name lang="de-DE">11</name>
+                    <name lang="de-CH">11</name>
+                    <name lang="it-CH">11</name>
+                </option>
+                <option>
+                    <id>12</id>
+                    <name>12</name>
+                    <name lang="de-DE">12</name>
+                    <name lang="de-CH">12</name>
+                    <name lang="it-CH">12</name>
+                </option>
+            </options>
+        </input-field>
+
+        <input-field type="text">
+            <name>heidiMaximumOrderValue</name>
+            <label>Maximum order value</label>
+            <label lang="de-DE">Maximaler Bestellwert</label>
+            <label lang="de-CH">Maximaler Bestellwert</label>
+            <label lang="it-CH">Valore massimo dell'ordine</label>
+        </input-field>
+
+        <input-field type="text">
+            <name>heidiPromotionWidgetMinAmount</name>
+            <label>Display promotional message only for products or orders above</label>
+            <label lang="de-DE">Anzeigen des Preis pro Monat nur für Produkte oder Bestellungen über</label>
+            <label lang="de-CH">Anzeigen des Preis pro Monat nur für Produkte oder Bestellungen über</label>
+            <label lang="it-CH">Visualizza il messaggio promozionale solo per prodotti o ordini sopra</label>
+            <defaultValue>0</defaultValue>
+        </input-field>
+
+        <input-field type="text">
+            <name>heidiPromotionWidgetMinInstalment</name>
+            <label>Display promotional message only if the monthly instalment amount is greater than</label>
+            <label lang="de-DE">Preis pro Monat nur anzeigen, wenn die monatliche Rate grösser ist als</label>
+            <label lang="de-CH">Preis pro Monat nur anzeigen, wenn die monatliche Rate grösser ist als</label>
+            <label lang="it-CH">Visualizza il messaggio promozionale solo se l'importo della rata mensile è superiore a /a è maggiore di</label>
+            <defaultValue>1</defaultValue>
+        </input-field>
+
+    </card>
+
+</config>

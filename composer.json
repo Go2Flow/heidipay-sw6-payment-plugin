@@ -1,0 +1,49 @@
+{
+  "name": "heidi-pay/ecom-shopware",
+  "version": "1.5.0",
+  "description": "HeidiPay Shopware 6 Plugin",
+  "type": "shopware-platform-plugin",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Go 2 Flow AG",
+      "homepage": "https://go2flow.com",
+      "role": "Manufacturer"
+    }
+  ],
+  "require": {
+    "shopware/core": "6.6.*",
+    "shopware/storefront": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Go2FlowHeidiPayPayment\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "Go2FlowHeidiPayPayment\\Go2FlowHeidiPayPayment",
+    "copyright": "(c) by go2flow",
+    "plugin-icon": "src/Resources/config/plugin.png",
+    "label": {
+      "de-DE": "HeidiPay Shopware 6",
+      "en-GB": "HeidiPay Shopware 6"
+    },
+  "description": {
+      "de-DE": "Steigern Sie Ihren Onlineshop-Umsatz um bis zu 30%., indem Sie Ihren Kunden eine einfache Möglichkeit bieten Bestellungen einfach per Kreditkarte in Raten zu bezahlen. ",
+      "en-GB": "Boost sales by letting your customers buy now and pay later. Get paid immediately and let your customers spread the cost. "
+  },
+  "manufacturerLink": {
+      "de-DE": "https://go2flow.com/",
+      "en-GB": "https://go2flow.com/"
+  },
+  "supportLink": {
+      "de-DE": "https://go2flow.com/kontakt/",
+      "en-GB": "https://go2flow.com/kontakt/"
+  }
+  },
+  "config": {
+    "allow-plugins": {
+      "symfony/runtime": true
+    }
+  }
+}

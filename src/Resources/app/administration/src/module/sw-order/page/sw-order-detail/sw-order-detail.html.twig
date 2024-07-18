@@ -1,0 +1,12 @@
+{% block sw_order_detail_content_tabs_general %}
+    {% parent %}
+
+    <template v-for="transaction in heidipayTransactions">
+        {% block heidipay_payment_payment_tab %}
+            <sw-tabs-item :route="{ name: 'heidipay.order.detail', params: { id: $route.params.id, transaction: transaction.id } }" title="Heidipay">
+                {{ $tc('HeidiPay.order.detail.tab') }}
+            </sw-tabs-item>
+        {% endblock %}
+    </template>
+
+{% endblock %}

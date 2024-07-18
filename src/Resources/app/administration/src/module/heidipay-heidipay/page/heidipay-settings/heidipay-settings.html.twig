@@ -1,0 +1,114 @@
+{% block heidipay_settings %}
+<sw-page class="heidipay-settings">
+    {% block heidipay_settings_header %}
+    <template slot="smart-bar-header">
+        <h2>
+            {{ $tc('sw-settings.index.title') }}
+            <sw-icon name="small-arrow-medium-right" small></sw-icon>
+            {{ $tc('HeidiPay.mainMenuItemGeneral') }}
+        </h2>
+    </template>
+    {% endblock %}
+    {% block heidipay_actions %}
+    <template #smart-bar-actions>
+        {% block heidipay_settings_actions_feedback %}
+        <sw-button
+            @click="isSupportModalOpen = true"
+            :disabled="false"
+            variant="ghost"
+            :square="false"
+            :block="false"
+            :isLoading="false">
+            {{ $tc('HeidiPay.supportModal.supportButton') }}
+        </sw-button>
+        {% endblock %}
+        {% block heidipay_settings_actions_test %}
+        <sw-button-process @click="onTest"
+                           :isLoading="isTesting"
+                           :processSuccess="isTestSuccessful"
+                           :disabled="isLoading">
+            {{ $tc('HeidiPay.settingsForm.test') }}
+        </sw-button-process>
+        {% endblock %}
+
+
+        {% block heidipay_settings_actions_save %}
+        <sw-button-process
+            class="sw-settings-login-registration__save-action"
+            :isLoading="isLoading"
+            :processSuccess="isSaveSuccessful"
+            :disabled="isLoading || isTesting"
+            variant="primary"
+            @process-finish="saveFinish"
+            @click="onSave">
+            {{ $tc('HeidiPay.settingsForm.save') }}
+        </sw-button-process>
+        {% endblock %}
+    </template>
+    {% endblock %}
+    {% block heidipay_settings_content %}
+    <template #content>
+        <sw-modal
+            v-if="isSupportModalOpen"
+            @modal-close="isSupportModalOpen = false"
+            :title="$tc('HeidiPay.supportModal.title')"
+            class="heidpay-support sw-modal--medium">
+            <sw-container columns="1fr 1fr">
+                <div class="heidpay-support__col">
+                    <div class="heidpay-support__icon">
+                        <sw-icon name="regular-file" :large="true"></sw-icon>
+                    </div>
+                    <p class="heidpay-support__desc">
+                        {{ $tc('HeidiPay.supportModal.manualDesc') }}
+                    </p>
+                    <sw-button
+                        :disabled="false"
+                        variant="primary"
+                        :square="false"
+                        :block="false"
+                        :isLoading="false"
+                        link="https://www.heidipay.com/de-ch/">
+                        {{ $tc('HeidiPay.supportModal.manualButton') }}
+                    </sw-button>
+                </div>
+                <div class="heidpay-support__col">
+                    <div class="heidpay-support__icon">
+                        <sw-icon name="regular-headset" :large="true"></sw-icon>
+                    </div>
+                    <p class="heidpay-support__desc">
+                        {{ $tc('HeidiPay.supportModal.supportDesc') }}
+                    </p>
+                    <sw-button
+                        :disabled="false"
+                        variant="primary"
+                        :square="false"
+                        :block="false"
+                        :isLoading="false"
+                        link="mailto:kontakt@go2flow.ch">
+                        {{ $tc('HeidiPay.supportModal.supportButton') }}
+                    </sw-button>
+                </div>
+            </sw-container>
+        </sw-modal>
+
+        <sw-card-view>
+            <div class="sw-system-config">
+                <div  class="sw-system-config__global-sales-channel-switch">
+                    <h3>{{ $tc('HeidiPay.settingsForm.attention') }}</h3>
+                    <p style="margin-bottom: 10px;">{{ $tc('HeidiPay.settingsForm.attentionText') }}</p>
+                    <p style="margin-bottom: 10px;">{{ $tc('HeidiPay.settingsForm.descriptionWebservice') }}</p>
+                    <p style="margin-bottom: 10px;"><a href="https://merchant-portal.heidipay.com/auth/login" target="_blank" rel="noopener nofollow">Merchant-Portal</a> </p>
+                </div>
+            </div>
+            <sw-system-config
+                    ref="systemConfig"
+                    domain="Go2FlowHeidiPayPayment.settings"
+                    sales-channel-switchable
+                    :sales-channel-id="salesChannelId"
+            />
+        </sw-card-view>
+    </template>
+    {% endblock %}
+</sw-page>
+{% endblock %}
+

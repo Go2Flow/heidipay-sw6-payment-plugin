@@ -1,0 +1,37 @@
+{% sw_extends '@Storefront/storefront/page/checkout/summary/summary-total.html.twig' %}
+
+{% block page_checkout_summary_total %}
+    {{ parent() }}
+
+    {% if config('Go2FlowHeidiPayPayment.settings.heidiPromotionShowOnCart') == 1 %}
+        {% if config('Go2FlowHeidiPayPayment.settings.heidiMaximumOrderValue') is empty or config('Go2FlowHeidiPayPayment.settings.heidiMaximumOrderValue') >= summary.price.rawTotal %}
+            {% if config('Go2FlowHeidiPayPayment.settings.heidiPromotionWidgetMinAmount') <= summary.price.rawTotal %}
+                {% if heidi_best_term(summary.price.rawTotal * 100) %}
+                    <div id="heidipay-container" class="heidipay-container"
+                         data-heidipay="true"
+                         data-heidipay-minorAmount="{{ heidi_add_fee(summary.price.rawTotal * 100) }}"
+                         data-heidipay-term="{{ heidi_best_term(summary.price.rawTotal * 100) }}"
+                         data-heidipay-currencySymbol="{{  page.header.activeCurrency.isoCode }}"
+                         data-heidipay-lang="{{ page.header.activeLanguage.translationCode.code[:2]  }}"
+                            {% if config('Go2FlowHeidiPayPayment.settings.heidiPromotionProductMode') == 1 %}
+                                data-heidipay-type="PRODUCT_DESCRIPTION_HEIDIPAY_CREDIT"
+                                data-heidipay-allowedterms="{{ config('Go2FlowHeidiPayPayment.settings.heidiPromotionTermsCredit')|join(',') }}"
+                            {% else %}
+                                data-heidipay-type="PRODUCT_DESCRIPTION_HEIDIPAY_BNPL"
+                                data-heidipay-allowedterms="{{ config('Go2FlowHeidiPayPayment.settings.heidiPromotionTerms')|join(',') }}"
+                            {% endif %}
+                         data-heidipay-apiKey="{{ config('Go2FlowHeidiPayPayment.settings.heidiPromotionPublicApiKey') }}"
+                         data-heidipay-cadence="MONTHLY"
+                         data-heidipay-thousandsSeparator="."
+                         data-heidipay-decimalSeparator=","
+                         data-heidipay-symbolOnLeft="false"
+                         data-heidipay-spaceBetweenAmountAndSymbol="true"
+                         data-heidipay-decimalDigits="2"></div>
+
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+
+{% endblock %}
