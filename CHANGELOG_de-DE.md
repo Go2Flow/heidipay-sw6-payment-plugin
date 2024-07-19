@@ -1,3 +1,5 @@
+# 1.6.0
+- Added Option to display both payment products in the promotional message
 # 1.5.0
 - Improved security of order status updates vie webhooks
 # 1.4.0

@@ -181,6 +181,12 @@
                     <name lang="de-DE">Finanzierung mit Zinsen (Kredit)</name>
                     <name lang="de-CH">Finanzierung mit Zinsen (Kredit)</name>
                 </option>
+                <option>
+                    <id>2</id>
+                    <name>Both (BNPL and Credit)</name>
+                    <name lang="de-DE">Beides (BNPL und Kredit)</name>
+                    <name lang="de-CH">Beides (BNPL und Kredit)</name>
+                </option>
             </options>
         </input-field>
 
